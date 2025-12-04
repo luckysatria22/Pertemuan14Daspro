@@ -50,3 +50,53 @@ Parameter isMember bertipe boolean yang menyimpan dua kemungkinan nilai: true at
 6. Done.
 7. Done.
 8. Ya, penggunaan parameter membuat program lebih baik.
+
+Percobaan 3
+1. Kapan Fungsi Membutuhkan Return Value:
+Fungsi membutuhkan nilai kembalian (return value) ketika fungsi tersebut melakukan perhitungan atau pemrosesan data yang hasilnya akan digunakan oleh bagian program lain. Fungsi yang mengembalikan nilai harus memiliki tipe data (int, double, String, boolean, dll.) sesuai dengan nilai yang dikembalikan.
+Contoh dari program kafe - PERLU return value:
+```
+public static int hitungTotalHarga(int pilihanMenu, int banyakItem) {
+    int[] hargaMenu = {15000, 20000, 22000, 12000, 18000};
+    int hargaSatuan = hargaMenu[pilihanMenu - 1];
+    int totalHarga = hargaSatuan * banyakItem;
+    return totalHarga;  
+}
+
+int totalBayar = hitungTotalHarga(2, 3);  
+System.out.println("Total: Rp " + totalBayar);
+```
+Fungsi ini HARUS mengembalikan nilai karena hasil perhitungan total harga akan digunakan untuk ditampilkan atau diproses lebih lanjut.
+Kapan Fungsi Tidak Perlu Return Value (void):
+Fungsi tidak perlu mengembalikan nilai ketika tugasnya hanya untuk menampilkan informasi atau melakukan aksi tanpa perlu memberikan hasil ke pemanggil fungsi.
+Contoh dari program kafe - TIDAK PERLU return value:
+```
+public static void Menu(String namaPelanggan, boolean isMember) {
+    System.out.println("===== MENU KAFE =====");
+    System.out.println("Selamat datang, " + namaPelanggan + "!");
+    System.out.println("1. Kopi Hitam - Rp 15.000");
+}
+
+Menu("Budi", true);  
+```
+Fungsi ini bertipe void karena hanya menampilkan menu ke layar, tidak perlu mengembalikan nilai apa pun.
+2. Tipe Data Nilai Kembalian: int
+Fungsi mengembalikan nilai bertipe int karena total harga dalam Rupiah merupakan bilangan bulat.
+Dua Parameter yang Digunakan:
+```
+1. Parameter pilihanMenu (tipe data: int)
+
+Menyimpan nomor menu yang dipilih oleh pelanggan (nilai 1-5)
+Digunakan sebagai indeks untuk mengakses harga di array hargaMenu
+Dalam konteks program kafe: angka ini merepresentasikan menu apa yang dipesan (1=Kopi Hitam, 2=Cappuccino, 3=Latte, 4=Teh Tarik, 5=Mie Goreng)
+Contoh: jika pelanggan memilih Cappuccino, maka pilihanMenu = 2
+
+2. Parameter banyakItem (tipe data: int)
+
+Menyimpan jumlah porsi atau kuantitas item yang dipesan
+Digunakan sebagai pengali untuk menghitung total harga (harga satuan × jumlah)
+Dalam konteks program kafe: angka ini merepresentasikan berapa banyak porsi menu yang sama dipesan
+Contoh: jika pelanggan pesan 3 gelas Cappuccino, maka banyakItem = 3.
+```
+3. Done.
+4. Done.
